@@ -1,0 +1,191 @@
+<div class="block-header">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <ul class="breadcrumb breadcrumb-style ">
+        <li class="breadcrumb-item">
+          <h4 class="page-title">Dashboard</h4>
+        </li>
+        <li class="breadcrumb-item bcrumb-1">
+          <a routerLink="/admin/dashboard/main">
+            <i class="fas fa-home"></i> Home</a>
+        </li>
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- -------------Header Cards Started------------- -->
+<mat-grid-list cols="4" rowHeight="2:1" gutterSize="20px">
+
+  <!-- First card start -->
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <!-- First One is end -->
+
+  <!-- Second Card starts -->
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <!-- Second Card End -->
+
+  <!-- third Card start -->
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <!-- third Card End -->
+
+
+  <!-- fourth Card start -->
+  <mat-grid-tile>
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+  <!-- fourth Card End -->
+
+
+</mat-grid-list>
+<!-- -------------Header Card Ends here------------- -->
+
+
+<!-- ----------Pie Chart Starts-------------- -->
+
+<div class="card" style="width: 65%;">
+ 
+  <div class="card-body">
+    
+    <p class="card-text">
+      <ngx-charts-bar-vertical [view]="[1000,400]" [results]="saleData" [xAxisLabel]="'Products'"
+[legendTitle]="'Product Sale Chart'" [yAxisLabel]="'Sale'" [legend]="true" [showXAxisLabel]="true"
+[showYAxisLabel]="true" [xAxis]="true" [yAxis]="true" [gradient]="true">
+</ngx-charts-bar-vertical>
+    </p>
+ 
+  </div>
+</div>
+
+
+
+
+<mat-grid-list cols="2" rowHeight="1:1.2">
+  <mat-grid-tile>
+    <div class="container">
+      <ejs-accumulationchart [title]='chartTitle' [legendSettings]='legend'>
+        <e-accumulation-series-collection>
+          <e-accumulation-series type='Pie' [dataSource]='data' xName='name' yName='value' [dataLabel]='ChartLabel'>
+          </e-accumulation-series>
+        </e-accumulation-series-collection>
+      </ejs-accumulationchart>
+
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <ngx-charts-pie-chart [results]="saleData" [legend]="true" [legendTitle]="'Product Sale Report'" [view]="[1000,300]"
+      [labels]="true">
+    </ngx-charts-pie-chart>
+    </mat-grid-tile>
+  
+</mat-grid-list>
+
+
+
+
+
+<!-- ----------Pie Charts End-------------- -->
+
+
+
+
+  
+ 
+ 
+
+      
+        
+
+      
+
+
+
+
+<!-- -------------Table Starts----------------- -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<!-- -------------Table Ends----------------- -->

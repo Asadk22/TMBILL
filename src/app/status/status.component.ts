@@ -1,0 +1,27 @@
+import { Component} from '@angular/core';
+import { BaseType } from 'd3-selection';
+
+@Component({
+  selector: 'app-status',
+  templateUrl: './status.component.html',
+  styleUrls: ['./status.component.css']
+})
+export class StatusComponent  {
+    
+    saleData = [
+        { name: "Mobiles", value: 105000 },
+        { name: "Laptop", value: 55000 },
+        { name: "AC", value: 15000 },
+        { name: "Headset", value: 150000 },
+        { name: "Fridge", value: 20000 }
+      ];
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+   //Chart.register(registerables);
+
+  }
+
+}

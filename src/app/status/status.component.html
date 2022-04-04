@@ -1,0 +1,26 @@
+<!-- <ejs-chart [title]='chartTitle'[primaryXAxis]='xAxis'
+[PrimaryYAxis]='yAxis'>
+<e-series-collection>
+    <e-series type='column' [datasource]='data' xName='name' yName='value'></e-series>
+</e-series-collection>
+</ejs-chart> -->
+
+<!-- <div id="divchart">
+    <canvas id="myChart"></canvas>
+</div> -->
+
+<h1>Hello World</h1>
+
+<ngx-charts-bar-vertical 
+    [view]="[1000,400]"
+    [results]="saleData"
+    [xAxisLabel]="'Products'"
+    [legendTitle]="'Product Sale Chart'"
+    [yAxisLabel]="'Sale'"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true">
+</ngx-charts-bar-vertical>
